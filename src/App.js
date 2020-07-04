@@ -1,9 +1,13 @@
+/* eslint-disable no-unused-vars */
 import React, { useRef, useEffect } from 'react';
-import { TimelineMax, Power2 } from 'gsap';
+import { TimelineMax, TweenMax, Power2 } from 'gsap/all';
 
 import './App.css';
 import BurgerLogo from './utils/images/burger-logo.svg';
 import MainImage from './utils/images/low-angle-photo-of-volkswagen-kombi-2533092-high.jpg';
+
+//without this line, TweenMax may get dropped by the bundler...
+const plugins = [TweenMax];
 
 function App() {
   const heroRef = useRef();
